@@ -1,13 +1,23 @@
-# Astro + React Example
+# Bilal Madi Portfolio
 
-```sh
-pnpm create astro@latest -- --template framework-react
-```
+A static Astro + React portfolio for Bilal Madi, styled with Tailwind CSS and deployed as Cloudflare Workers Static Assets.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/framework-react)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/framework-react)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/framework-react/devcontainer.json)
+## Commands
 
-This example showcases Astro working with [React](https://react.dev).
+| Command | Action |
+| --- | --- |
+| `pnpm dev` | Start the local Astro dev server. |
+| `pnpm build` | Build the static site into `dist/`. |
+| `pnpm preview` | Preview the production build locally. |
+| `pnpm deploy` | Build and deploy with Wrangler. |
 
-Write your React components as `.jsx` or `.tsx` files in your project.
+## Deployment
+
+The repository is configured for Cloudflare Workers Static Assets through `wrangler.jsonc`.
+
+GitHub Actions deploys on pushes to `main`. Configure these repository secrets before the first CI deployment:
+
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+
+The planned production domain is `bilalmadi.com`; validate the Workers URL first before changing DNS or custom-domain routing.

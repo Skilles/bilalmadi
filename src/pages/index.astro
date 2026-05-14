@@ -1,38 +1,31 @@
 ---
-// Component Imports
-import Counter from '../components/Counter';
+import Portfolio from '../components/Portfolio';
+import '../styles/global.css';
 
-const someProps = {
-	count: 0,
-};
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+const title = 'Bilal Madi | Software Engineer';
+const description =
+	'Portfolio for Bilal Madi, a software engineer in Atlanta building production systems, AI tools, game projects, and developer-focused products.';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#07090c" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content="https://bilalmadi.com" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<style>
-			html,
-			body {
-				font-family: system-ui;
-				margin: 0;
-			}
-			body {
-				padding: 2rem;
-			}
-		</style>
 	</head>
-	<body>
-		<main>
-			<Counter {...someProps} client:visible>
-				<h1>Hello, React!</h1>
-			</Counter>
-		</main>
+	<body class="min-h-screen bg-[var(--color-obsidian)] text-[var(--color-ash)] antialiased">
+		<Portfolio />
 	</body>
 </html>
