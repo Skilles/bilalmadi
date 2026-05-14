@@ -14,7 +14,7 @@ const description =
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		<meta name="theme-color" content="#07090c" />
+		<meta name="theme-color" content="#0a0a0a" />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
@@ -25,7 +25,57 @@ const description =
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 	</head>
-	<body class="min-h-screen bg-[var(--color-obsidian)] text-[var(--color-ash)] antialiased">
+	<body>
 		<Portfolio />
+		<script is:inline>
+			document.querySelectorAll('.project').forEach((project) => {
+				project.addEventListener('mousemove', (event) => {
+					const rect = project.getBoundingClientRect();
+					project.style.setProperty('--mx', `${event.clientX - rect.left}px`);
+					project.style.setProperty('--my', `${event.clientY - rect.top}px`);
+				});
+			});
+
+			const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+			if (!reduceMotion && 'IntersectionObserver' in window) {
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add('in');
+								observer.unobserve(entry.target);
+							}
+						});
+					},
+					{ threshold: 0.12 },
+				);
+
+				document.querySelectorAll('.section-head, .tl-item, .project, .contact-lead, .contact-row').forEach((element, index) => {
+					element.classList.add('reveal');
+					element.style.transitionDelay = `${(index % 6) * 60}ms`;
+					observer.observe(element);
+				});
+			} else {
+				document.querySelectorAll('.section-head, .tl-item, .project, .contact-lead, .contact-row').forEach((element) => {
+					element.classList.add('in');
+				});
+			}
+
+			function updateClock() {
+				const formatter = new Intl.DateTimeFormat('en-US', {
+					timeZone: 'America/New_York',
+					hour12: false,
+					hour: '2-digit',
+					minute: '2-digit',
+					second: '2-digit',
+				});
+				const clock = document.getElementById('clock');
+				if (clock) clock.textContent = `${formatter.format(new Date())} EST`;
+			}
+
+			updateClock();
+			window.setInterval(updateClock, 1000);
+		</script>
 	</body>
 </html>
