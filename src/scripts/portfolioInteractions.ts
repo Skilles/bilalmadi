@@ -73,6 +73,7 @@ if (!reduceMotion && ambientBackground) {
 	let pointerDirty = supportsFinePointer;
 	let scrollDirty = true;
 	let liquidCanvas: ReturnType<typeof createAmbientLiquidCanvas> | null = null;
+	let liquidResizeTimer: number | null = null;
 
 	const px = (value: number) => `${Math.round(value * 2) / 2}px`;
 	const updatePointerVars = () => {
@@ -102,6 +103,15 @@ if (!reduceMotion && ambientBackground) {
 		});
 	};
 
+	const scheduleLiquidResize = () => {
+		if (liquidResizeTimer !== null) window.clearTimeout(liquidResizeTimer);
+
+		liquidResizeTimer = window.setTimeout(() => {
+			liquidCanvas?.resize();
+			liquidResizeTimer = null;
+		}, 140);
+	};
+
 	if (supportsFinePointer) {
 		window.addEventListener(
 			'pointermove',
@@ -122,7 +132,7 @@ if (!reduceMotion && ambientBackground) {
 			viewportHeight = Math.max(window.innerHeight, 1);
 			pointerDirty = supportsFinePointer;
 			scrollDirty = true;
-			liquidCanvas?.resize();
+			scheduleLiquidResize();
 			scheduleBackgroundUpdate();
 		},
 		{ passive: true },
@@ -232,13 +242,14 @@ function resizeCanvas(canvas: HTMLCanvasElement) {
 	const scale = getCanvasScale(width);
 	const pixelWidth = Math.round(width * scale);
 	const pixelHeight = Math.round(height * scale);
+	const changed = canvas.width !== pixelWidth || canvas.height !== pixelHeight;
 
-	if (canvas.width !== pixelWidth || canvas.height !== pixelHeight) {
+	if (changed) {
 		canvas.width = pixelWidth;
 		canvas.height = pixelHeight;
 	}
 
-	return { height, scale, width };
+	return { changed, height, scale, width };
 }
 
 function createNoisePattern(context: CanvasRenderingContext2D) {
@@ -641,9 +652,29 @@ function createAmbientLiquidCanvas(canvas: HTMLCanvasElement, getState: () => Am
 
 	return {
 		resize() {
-			dimensions = resizeCanvas(canvas);
-			noisePattern = createNoisePattern(context);
-			drops = createLiquidDrops(dimensions.width, dimensions.height);
+			const previousDimensions = dimensions;
+			const nextDimensions = resizeCanvas(canvas);
+
+			if (!nextDimensions.changed) return;
+
+			const scaleX = nextDimensions.width / Math.max(previousDimensions.width, 1);
+			const scaleY = nextDimensions.height / Math.max(previousDimensions.height, 1);
+			const velocityScale = Math.min(scaleX, scaleY);
+
+			drops.forEach((drop) => {
+				drop.x *= scaleX;
+				drop.y *= scaleY;
+				drop.vx *= velocityScale;
+				drop.vy *= velocityScale;
+				drop.distance *= velocityScale;
+			});
+
+			wake.forEach((point) => {
+				point.x *= scaleX;
+				point.y *= scaleY;
+			});
+
+			dimensions = nextDimensions;
 		},
 		start() {
 			if (frame === null) frame = window.requestAnimationFrame(paint);

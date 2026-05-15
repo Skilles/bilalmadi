@@ -24,7 +24,8 @@ export function Projects({ githubUrl, projects }: ProjectsProps) {
 				<div className="flex flex-wrap items-center justify-between gap-5 pt-8 text-[13.5px] text-dim">
 					<span>More projects live on GitHub.</span>
 					<a
-						className={`${focusRing} ${reveal} group relative flex min-h-[280px] flex-col overflow-visible bg-transparent px-6 py-8 text-paper no-underline transition-colors duration-350 before:pointer-events-none before:absolute before:inset-0 before:z-[3] before:bg-[radial-gradient(circle_300px_at_var(--mx,50%)_var(--my,50%),color-mix(in_oklab,var(--project-accent)_16%,transparent),transparent_70%)] before:opacity-0 before:mix-blend-screen before:transition-opacity before:duration-[400ms] hover:before:opacity-100 [@media(hover:none)]:before:opacity-100 md:min-h-[300px] md:px-8 md:py-9`}
+						className={`${focusRing} ${reveal} group inline-flex items-center gap-1.5 text-paper no-underline transition-colors duration-300 hover:text-acid`}
+						data-reveal
 						href={githubUrl}
 						rel="noreferrer"
 						target="_blank"
