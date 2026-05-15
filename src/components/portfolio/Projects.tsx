@@ -15,7 +15,7 @@ export function Projects({ githubUrl, projects }: ProjectsProps) {
 			<div className={container}>
 				<SectionHeader title="Cool Projects" />
 
-				<div className="grid overflow-hidden rounded-sm border border-white/6 bg-white/6 md:grid-cols-2 lg:grid-cols-3">
+				<div className="grid overflow-hidden rounded-sm border border-white/7 bg-white/7 md:grid-cols-2 lg:grid-cols-3">
 					{projects.map((project) => (
 						<ProjectCard key={project.name} project={project} />
 					))}
