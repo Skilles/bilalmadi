@@ -84,6 +84,21 @@ export const experienceItems: ExperienceItem[] = [
 	},
 ];
 
+const tagColors = {
+	portfolio: '#38bdf8',
+	frontend: '#22d3ee',
+	ai: '#c084fc',
+	python: '#10b981',
+	game: '#a3e635',
+	dotnet: '#0e9b31',
+	media: '#f97316',
+	security: '#f43f5e',
+	desktop: '#818cf8',
+	food: '#f59e0b',
+	java: '#fb7185',
+	kotlin: '#c084fc',
+} as const;
+
 export const featuredProjects: Project[] = [
 	{
 		name: 'This Website',
@@ -95,9 +110,9 @@ export const featuredProjects: Project[] = [
 		description:
 			'The site you are currently viewing. Built with Astro, React, and Tailwind.',
 		tags: [
-			{ label: 'Portfolio', color: '#ff4f87' },
-			{ label: 'Astro', color: '#ffb84a' },
-			{ label: 'React', color: '#36d7ff' },
+			{ label: 'Portfolio', color: tagColors.portfolio },
+			{ label: 'Astro', color: tagColors.frontend },
+			{ label: 'React', color: tagColors.frontend },
 		],
 		accentColor: '#c9f046',
 	},
@@ -111,9 +126,9 @@ export const featuredProjects: Project[] = [
 		description:
 			'An AI-guided platform with a mission to democratize trademark filing for small businesses.',
 		tags: [
-			{ label: 'AI Product', color: '#ff4f87' },
-			{ label: 'Next.js', color: '#ffb84a' },
-			{ label: 'Python', color: '#36d7ff' },
+			{ label: 'AI Product', color: tagColors.ai },
+			{ label: 'Next.js', color: tagColors.frontend },
+			{ label: 'Python', color: tagColors.python },
 		],
 		accentColor: '#108545',
 	},
@@ -127,9 +142,9 @@ export const featuredProjects: Project[] = [
 		description:
 			'A top-down Unity game project with a focus on emergent gameplay and pixel-based interactions.',
 		tags: [
-			{ label: 'Game Dev', color: '#a58bff' },
-			{ label: 'Unity', color: '#ffb84a' },
-			{ label: 'C#', color: '#36d7ff' },
+			{ label: 'Game Dev', color: tagColors.game },
+			{ label: 'Unity', color: tagColors.frontend },
+			{ label: 'C#', color: tagColors.dotnet },
 		],
 		accentColor: '#a58bff',
 	},
@@ -143,9 +158,9 @@ export const featuredProjects: Project[] = [
 		description:
 			'An experiment in packing binary data into colored QR-code frames, pushing against storage, timing, and playback constraints.',
 		tags: [
-			{ label: 'Media Encoding', color: '#ff4f87' },
-			{ label: 'FFmpeg', color: '#ffb84a' },
-			{ label: 'Python', color: '#36d7ff' },
+			{ label: 'Media Encoding', color: tagColors.media },
+			{ label: 'FFmpeg', color: tagColors.frontend },
+			{ label: 'Python', color: tagColors.python },
 		],
 		accentColor: '#36d7ff',
 	},
@@ -159,9 +174,9 @@ export const featuredProjects: Project[] = [
 		description:
 			'Public Minecraft mod projects including SpokenWord, MobMincer, and Craftonauts, with a theme of automation and AI-assisted content. Totaling over 4k downloads.',
 		tags: [
-			{ label: 'Game Mods', color: '#7ddf64' },
-			{ label: 'Java', color: '#ffb84a' },
-			{ label: 'Kotlin', color: '#36d7ff' },
+			{ label: 'Game Mods', color: tagColors.game },
+			{ label: 'Java', color: tagColors.java },
+			{ label: 'Kotlin', color: tagColors.kotlin },
 		],
 		accentColor: '#7ddf64',
 	},
@@ -175,9 +190,9 @@ export const featuredProjects: Project[] = [
 		description:
 			'A desktop utility for hiding and recovering text inside images using least-significant-bit steganography.',
 		tags: [
-			{ label: 'Data Hiding', color: '#a58bff' },
-			{ label: 'WinForms', color: '#ffb84a' },
-			{ label: 'C#', color: '#36d7ff' },
+			{ label: 'Data Hiding', color: tagColors.security },
+			{ label: 'WinForms', color: tagColors.desktop },
+			{ label: 'C#', color: tagColors.dotnet },
 		],
 		accentColor: '#a58bff',
 	},
@@ -191,9 +206,9 @@ export const featuredProjects: Project[] = [
 		description:
 			'A 24-hour UGA Hackathon web app that recommends foods from a custom fitness profile and nutrition goals.',
 		tags: [
-			{ label: 'Nutrition', color: '#ff4f87' },
-			{ label: 'Django', color: '#ffb84a' },
-			{ label: 'Python', color: '#36d7ff' },
+			{ label: 'Nutrition', color: tagColors.food },
+			{ label: 'Django', color: tagColors.frontend },
+			{ label: 'Python', color: tagColors.python },
 		],
 		accentColor: '#ffb84a',
 	},
@@ -207,9 +222,9 @@ export const featuredProjects: Project[] = [
 		description:
 			'A simple painting program that predicts the digit on the canvas while the user draws with adjustable brush and color controls.',
 		tags: [
-			{ label: 'Machine Learning', color: '#ff4f87' },
-			{ label: 'WinForms', color: '#ffb84a' },
-			{ label: 'C#', color: '#36d7ff' },
+			{ label: 'Machine Learning', color: tagColors.ai },
+			{ label: 'WinForms', color: tagColors.desktop },
+			{ label: 'C#', color: tagColors.dotnet },
 		],
 		accentColor: '#36d7ff',
 	},
@@ -223,9 +238,9 @@ export const featuredProjects: Project[] = [
 		description:
 			'A blackjack trainer using NEAT-generated neural networks to evolve strategy against the house and compare outcomes with known optimal play.',
 		tags: [
-			{ label: 'Machine Learning', color: '#ff4f87' },
-			{ label: 'NEAT', color: '#ffb84a' },
-			{ label: 'Python', color: '#36d7ff' },
+			{ label: 'Machine Learning', color: tagColors.ai },
+			{ label: 'NEAT', color: tagColors.ai },
+			{ label: 'Python', color: tagColors.python },
 		],
 		accentColor: '#ff4f87',
 	},
