@@ -103,8 +103,8 @@ export const featuredProjects: Project[] = [
 	{
 		name: 'This Website',
 		type: 'Portfolio',
-		href: 'https://github.com/Skilles/bilal-personal',
-		imageUrl: 'https://opengraph.githubassets.com/bilal-portfolio-current-site/Skilles/bilal-personal',
+		href: 'https://github.com/Skilles/bilalmadi',
+		imageUrl: 'https://opengraph.githubassets.com/bilal-portfolio-current-site/Skilles/bilalmadi',
 		imageWidth: 1200,
 		imageHeight: 600,
 		description:
