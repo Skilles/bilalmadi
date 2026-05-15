@@ -6,7 +6,7 @@ export function AmbientBackground() {
 			data-ambient-background
 		>
 			<div
-				className="absolute inset-[-140px] translate-x-[calc(var(--pointer-drift-x,0px)*-0.5)] translate-y-[calc(var(--bg-shift,0px)*-0.72+var(--pointer-drift-y,0px)*-0.22)] bg-[radial-gradient(circle,rgba(255,255,255,0.055)_1px,transparent_1px)] bg-[length:30px_30px] opacity-80 [mask-image:radial-gradient(ellipse_1180px_780px_at_50%_0%,black_0%,transparent_78%)]"
+				className="absolute inset-[-140px] translate-x-[calc(var(--pointer-drift-x,0px)*-0.5)] translate-y-[calc(var(--bg-shift,0px)*-0.72+var(--pointer-drift-y,0px)*-0.22)] bg-[radial-gradient(circle,rgba(255,255,255,0.085)_1px,transparent_1.15px)] bg-[length:27px_27px] opacity-95 [mask-image:radial-gradient(ellipse_1180px_780px_at_50%_0%,black_0%,transparent_80%)]"
 			/>
 			<div className="absolute inset-0 animate-ambient-hue">
 				<div
