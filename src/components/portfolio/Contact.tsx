@@ -6,13 +6,14 @@ type ContactProps = {
 	email: string;
 	githubUrl: string;
 	linkedinUrl: string;
+	resumeUrl: string;
 };
 
-export function Contact({ email, githubUrl, linkedinUrl }: ContactProps) {
+export function Contact({ email, githubUrl, linkedinUrl, resumeUrl }: ContactProps) {
 	const links = [
 		{ label: 'GitHub', href: githubUrl },
 		{ label: 'LinkedIn', href: linkedinUrl },
-		{ label: 'Resume', href: `mailto:${email}?subject=Resume%20request` },
+		{ label: 'Resume', href: resumeUrl },
 	];
 
 	return (

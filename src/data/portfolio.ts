@@ -134,7 +134,7 @@ export const featuredProjects: Project[] = [
 			'An experiment in packing binary data into colored QR-code frames, pushing against storage, timing, and playback constraints.',
 		tags: [
 			{ label: 'Media Encoding', color: '#ff4f87' },
-			{ label: 'OpenCV', color: '#ffb84a' },
+			{ label: 'FFmpeg', color: '#ffb84a' },
 			{ label: 'Python', color: '#36d7ff' },
 		],
 		accentColor: '#36d7ff',

@@ -23,7 +23,7 @@ export default function Portfolio() {
 				/>
 				<Experience items={experienceItems} />
 				<Projects githubUrl={profile.githubUrl} projects={featuredProjects} />
-				<Contact email={profile.email} githubUrl={profile.githubUrl} linkedinUrl={profile.linkedinUrl} />
+				<Contact email={profile.email} githubUrl={profile.githubUrl} linkedinUrl={profile.linkedinUrl} resumeUrl={profile.resumeUrl} />
 			</main>
 
 			<SiteFooter />

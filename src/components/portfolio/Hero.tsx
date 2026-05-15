@@ -19,7 +19,7 @@ export function Hero({ avatarUrl, company, intro, location, name, socialLinks, t
 			<div className="mx-auto grid w-full max-w-[1240px] items-center gap-12 md:grid-cols-[1fr_auto] md:gap-20">
 				<div>
 					<p className={`${monoLabel} mb-7 text-dim flex items-center gap-2 hover:text-paper transition`}><span className="mx-0.5 text-line">/</span>{location}</p>
-					<h1 className="mb-10 text-[clamp(64px,10vw,144px)] font-medium leading-[0.92] tracking-[-0.045em]">
+					<h1 className="mb-10 text-[clamp(64px,10vw,144px)] font-medium leading-[0.92] tracking-[-0.045em] drop-shadow-lg">
 						{firstName}
 						<br />
 						<span className="bg-gradient-to-r from-paper via-aqua to-rose bg-clip-text text-transparent">{lastName}</span>
