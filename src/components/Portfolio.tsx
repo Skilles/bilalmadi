@@ -3,6 +3,7 @@ import { AmbientBackground } from './portfolio/AmbientBackground';
 import { Contact } from './portfolio/Contact';
 import { Experience } from './portfolio/Experience';
 import { Hero } from './portfolio/Hero';
+import { Julian } from './portfolio/Julian';
 import { Projects } from './portfolio/Projects';
 import { SiteFooter } from './portfolio/SiteFooter';
 
@@ -24,6 +25,7 @@ export default function Portfolio() {
 				/>
 				<Experience items={experienceItems} />
 				<Projects githubUrl={profile.githubUrl} projects={featuredProjects} />
+				<Julian />
 				<Contact email={profile.email} githubUrl={profile.githubUrl} linkedinUrl={profile.linkedinUrl} resumeUrl={profile.resumeUrl} />
 			</main>
 
