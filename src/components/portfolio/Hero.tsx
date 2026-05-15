@@ -49,7 +49,7 @@ export function Hero({ avatarHeight, avatarUrl, avatarWidth, company, location, 
 		<section className="relative z-10 flex min-h-screen items-center px-5 py-15 md:px-10 md:py-20 md:pb-25">
 			<div className="mx-auto grid w-full max-w-[1240px] items-center gap-12 md:grid-cols-[1fr_auto] md:gap-20">
 				<div>
-					<p className={`${monoLabel} mb-7 text-dim flex items-center gap-2 hover:text-paper transition`}><span className="mx-0.5 text-line">/</span>{location}</p>
+					<p className={`${monoLabel} mb-7 text-dim flex items-center gap-2 hover:text-paper transition`}><span className="mx-0.5 text-white/7">/</span>{location}</p>
 					<h1
 						aria-label={name}
 						className="mb-10 text-[clamp(64px,10vw,144px)] font-medium leading-[0.92] tracking-[-0.045em] drop-shadow-lg"
