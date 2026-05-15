@@ -8,9 +8,10 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "check": "astro check",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "pnpm build && wrangler deploy",
+    "deploy": "pnpm check && pnpm build && wrangler deploy",
     "astro": "astro"
   },
   "dependencies": {
@@ -24,8 +25,10 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.9",
     "@tailwindcss/vite": "^4.3.0",
     "tailwindcss": "^4.3.0",
+    "typescript": "next",
     "wrangler": "^4.90.1"
   }
 }

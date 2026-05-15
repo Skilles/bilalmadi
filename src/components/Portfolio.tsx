@@ -11,11 +11,12 @@ export default function Portfolio() {
 		<>
 			<AmbientBackground />
 
-			<main>
+			<main id="main">
 				<Hero
 					avatarUrl={profile.avatarUrl.src}
+					avatarHeight={profile.avatarUrl.height}
+					avatarWidth={profile.avatarUrl.width}
 					company={profile.company}
-					intro={profile.intro}
 					location={profile.location}
 					name={profile.name}
 					socialLinks={socialLinks}

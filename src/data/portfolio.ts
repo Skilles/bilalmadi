@@ -23,6 +23,8 @@ export type Project = {
 	type: string;
 	href: string;
 	imageUrl: string;
+	imageWidth: number;
+	imageHeight: number;
 	description: string;
 	tags: ProjectTag[];
 	accentColor: string;
@@ -57,7 +59,7 @@ export const experienceItems: ExperienceItem[] = [
 	{
 		role: 'Software Engineer II',
 		org: 'WebstaurantStore',
-		when: 'DEC 2025 - NOW',
+		when: 'Dec 2025 - Present',
 		description:
 			'Building highly scalable .NET-backed applications utilizing artificial intelligence to automate expense reporting and analysis.',
 	},
@@ -72,7 +74,7 @@ export const experienceItems: ExperienceItem[] = [
 		role: 'B.S. Computer Science',
 		org: 'University of Georgia',
 		when: '2019 - 2023',
-		description: 'After pivoting from pre-med to computer science my junior year, I fell in love with programming  and built numerous projects across games, AI, course tooling, graphics, and web apps.',
+		description: 'After pivoting from pre-med to computer science my junior year, I fell in love with programming and built numerous projects across games, AI, course tooling, graphics, and web apps.',
 	},
 	{
 		role: 'Co-Founder',
@@ -88,6 +90,8 @@ export const featuredProjects: Project[] = [
 		type: 'Portfolio',
 		href: 'https://github.com/Skilles/bilal-personal',
 		imageUrl: 'https://opengraph.githubassets.com/bilal-portfolio-current-site/Skilles/bilal-personal',
+		imageWidth: 1200,
+		imageHeight: 600,
 		description:
 			'The site you are currently viewing. Built with Astro, React, and Tailwind.',
 		tags: [
@@ -102,11 +106,13 @@ export const featuredProjects: Project[] = [
 		type: 'Interactive Project',
 		href: 'https://heyb.ai',
 		imageUrl: brandonImage.src,
+		imageWidth: brandonImage.width,
+		imageHeight: brandonImage.height,
 		description:
 			'An AI-guided platform with a mission to democratize trademark filing for small businesses.',
 		tags: [
 			{ label: 'AI Product', color: '#ff4f87' },
-			{ label: 'Next.JS', color: '#ffb84a' },
+			{ label: 'Next.js', color: '#ffb84a' },
 			{ label: 'Python', color: '#36d7ff' },
 		],
 		accentColor: '#108545',
@@ -116,6 +122,8 @@ export const featuredProjects: Project[] = [
 		type: 'Unity Game',
 		href: 'https://github.com/Skilles/Randonaut',
 		imageUrl: randonautImage.src,
+		imageWidth: randonautImage.width,
+		imageHeight: randonautImage.height,
 		description:
 			'A top-down Unity game project with a focus on emergent gameplay and pixel-based interactions.',
 		tags: [
@@ -130,6 +138,8 @@ export const featuredProjects: Project[] = [
 		type: 'Media Experiment',
 		href: 'https://github.com/Skilles/QRMovie',
 		imageUrl: 'https://opengraph.githubassets.com/bilal-portfolio-qrmovie/Skilles/QRMovie',
+		imageWidth: 1200,
+		imageHeight: 600,
 		description:
 			'An experiment in packing binary data into colored QR-code frames, pushing against storage, timing, and playback constraints.',
 		tags: [
@@ -144,6 +154,8 @@ export const featuredProjects: Project[] = [
 		type: 'Game Modding',
 		href: 'https://github.com/Skilles?tab=repositories&q=&type=&language=&sort=',
 		imageUrl: spokenwordImage.src,
+		imageWidth: spokenwordImage.width,
+		imageHeight: spokenwordImage.height,
 		description:
 			'Public Minecraft mod projects including SpokenWord, MobMincer, and Craftonauts, with a theme of automation and AI-assisted content. Totaling over 4k downloads.',
 		tags: [
@@ -158,6 +170,8 @@ export const featuredProjects: Project[] = [
 		type: 'Security Tool',
 		href: 'https://github.com/Skilles/LsbSteganographer',
 		imageUrl: 'https://opengraph.githubassets.com/bilal-portfolio-lsb-steganographer/Skilles/LsbSteganographer',
+		imageWidth: 1200,
+		imageHeight: 600,
 		description:
 			'A desktop utility for hiding and recovering text inside images using least-significant-bit steganography.',
 		tags: [
@@ -172,6 +186,8 @@ export const featuredProjects: Project[] = [
 		type: 'Hackathon Web App',
 		href: 'https://github.com/Skilles/A-La-Cart',
 		imageUrl: 'https://opengraph.githubassets.com/bilal-portfolio-a-la-cart/Skilles/A-La-Cart',
+		imageWidth: 1200,
+		imageHeight: 600,
 		description:
 			'A 24-hour UGA Hackathon web app that recommends foods from a custom fitness profile and nutrition goals.',
 		tags: [
@@ -186,6 +202,8 @@ export const featuredProjects: Project[] = [
 		type: 'Creative AI',
 		href: 'https://github.com/Skilles/PaintAI',
 		imageUrl: 'https://opengraph.githubassets.com/bilal-portfolio-paintai/Skilles/PaintAI',
+		imageWidth: 1200,
+		imageHeight: 600,
 		description:
 			'A simple painting program that predicts the digit on the canvas while the user draws with adjustable brush and color controls.',
 		tags: [
@@ -200,6 +218,8 @@ export const featuredProjects: Project[] = [
 		type: 'AI Simulation',
 		href: 'https://github.com/Skilles/Blackjack-AI',
 		imageUrl: 'https://opengraph.githubassets.com/bilal-portfolio-blackjack-ai/Skilles/Blackjack-AI',
+		imageWidth: 1200,
+		imageHeight: 600,
 		description:
 			'A blackjack trainer using NEAT-generated neural networks to evolve strategy against the house and compare outcomes with known optimal play.',
 		tags: [

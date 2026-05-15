@@ -26,7 +26,7 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 const supportsFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 let pointerX = window.innerWidth / 2;
 let pointerY = window.innerHeight * 0.38;
-let scrollY = window.scrollY;
+let currentScrollY = window.scrollY;
 let viewportWidth = Math.max(window.innerWidth, 1);
 let viewportHeight = Math.max(window.innerHeight, 1);
 
@@ -84,7 +84,7 @@ if (!reduceMotion && ambientBackground) {
 	};
 
 	const updateScrollVars = () => {
-		const shift = Math.min(scrollY * 0.28, 180);
+		const shift = Math.min(currentScrollY * 0.28, 180);
 
 		setAmbientVar('--bg-shift', px(shift));
 	};
@@ -131,7 +131,7 @@ if (!reduceMotion && ambientBackground) {
 	window.addEventListener(
 		'scroll',
 		() => {
-			scrollY = window.scrollY;
+			currentScrollY = window.scrollY;
 			scrollDirty = true;
 			scheduleBackgroundUpdate();
 		},
@@ -144,7 +144,7 @@ if (!reduceMotion && ambientBackground) {
 			? createAmbientLiquidCanvas(ambientCanvas, () => ({
 					pointerX,
 					pointerY,
-					scrollY,
+					scrollY: currentScrollY,
 					supportsFinePointer,
 					viewportHeight,
 					viewportWidth,

@@ -13,7 +13,7 @@ export function Projects({ githubUrl, projects }: ProjectsProps) {
 	return (
 		<section className={sectionShell} id="projects">
 			<div className={container}>
-				<SectionHeader number="02" title="Cool Projects" />
+				<SectionHeader title="Cool Projects" />
 
 				<div className="grid overflow-hidden rounded-sm border border-white/6 bg-white/6 md:grid-cols-2 lg:grid-cols-3">
 					{projects.map((project) => (
@@ -53,8 +53,11 @@ function ProjectCard({ project }: { project: Project }) {
 				alt=""
 				aria-hidden="true"
 				className="absolute inset-0 z-0 size-full scale-110 object-cover opacity-[0.18] blur-[8px] saturate-[1.2] transition duration-500 group-hover:scale-[1.14] group-hover:opacity-[0.28] group-hover:blur-[3px] [@media(hover:none)]:opacity-[0.24] [@media(hover:none)]:blur-[6px]"
+				decoding="async"
+				height={project.imageHeight}
 				loading="lazy"
 				src={project.imageUrl}
+				width={project.imageWidth}
 			/>
 			<div
 				aria-hidden="true"

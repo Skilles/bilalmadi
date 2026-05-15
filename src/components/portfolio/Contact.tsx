@@ -19,7 +19,7 @@ export function Contact({ email, githubUrl, linkedinUrl, resumeUrl }: ContactPro
 	return (
 		<section className="relative z-10 px-5 py-16 pb-20 md:px-10 md:py-24 md:pb-28" id="contact">
 			<div className={container}>
-				<SectionHeader number="03" title="Contact" />
+				<SectionHeader title="Contact" />
 
 				<div className={`${reveal} flex flex-col items-start gap-7 md:flex-row md:items-end md:justify-between md:gap-10`} data-reveal>
 					<a

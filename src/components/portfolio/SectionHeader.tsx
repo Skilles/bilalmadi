@@ -1,11 +1,10 @@
 import { monoLabel, reveal } from './styles';
 
 type SectionHeaderProps = {
-	number: string;
 	title: string;
 };
 
-export function SectionHeader({ number, title }: SectionHeaderProps) {
+export function SectionHeader({ title }: SectionHeaderProps) {
 	return (
 		<div
 			className={`${reveal} mb-10 flex flex-wrap items-center gap-3 border-b border-white/6 pb-7 md:gap-10`}

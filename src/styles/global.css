@@ -45,6 +45,29 @@
 		-webkit-font-smoothing: antialiased;
 	}
 
+	.skip-link {
+		position: fixed;
+		top: 1rem;
+		left: 1rem;
+		z-index: 50;
+		transform: translateY(calc(-100% - 1.5rem));
+		border: 1px solid color-mix(in oklab, var(--color-acid) 42%, transparent);
+		background: var(--color-obsidian);
+		color: var(--color-paper);
+		padding: 0.625rem 0.875rem;
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		text-decoration: none;
+		text-transform: uppercase;
+		transition: transform 160ms ease;
+	}
+
+	.skip-link:focus-visible {
+		transform: translateY(0);
+		outline: 2px solid color-mix(in oklab, var(--color-acid) 70%, transparent);
+		outline-offset: 4px;
+	}
+
 	::selection {
 		background: rgba(201, 240, 70, 0.28);
 		color: var(--color-paper);

@@ -2,16 +2,17 @@ import type { SocialLink } from '../../data/portfolio';
 import { focusRing, monoLabel } from './styles';
 
 type HeroProps = {
+	avatarHeight: number;
 	avatarUrl: string;
+	avatarWidth: number;
 	company: string;
-	intro: string;
 	location: string;
 	name: string;
 	socialLinks: SocialLink[];
 	title: string;
 };
 
-export function Hero({ avatarUrl, company, intro, location, name, socialLinks, title }: HeroProps) {
+export function Hero({ avatarHeight, avatarUrl, avatarWidth, company, location, name, socialLinks, title }: HeroProps) {
 	const [firstName, lastName] = name.split(' ');
 
 	return (
@@ -45,7 +46,15 @@ export function Hero({ avatarUrl, company, intro, location, name, socialLinks, t
 				</div>
 
 				<div className="relative order-first w-40 overflow-hidden rounded bg-[#050505] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)] ring-1 ring-white/6 aspect-[3/4] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_28%_38%,#00e5ff_0%,transparent_32%),radial-gradient(circle_at_72%_32%,#ffea00_0%,transparent_30%),radial-gradient(circle_at_50%_72%,#ff1744_0%,transparent_38%),radial-gradient(circle_at_82%_78%,#00ff9c_0%,transparent_32%),linear-gradient(135deg,#1a0530,#2a0510_60%,#050a20)] before:blur-[28px] before:saturate-[1.2] after:absolute after:inset-0 after:bg-[linear-gradient(180deg,transparent_55%,rgba(0,0,0,0.45)_100%),radial-gradient(circle_at_50%_40%,transparent_30%,rgba(0,0,0,0.3)_80%)] md:order-none md:w-80">
-					<img alt={name} className="relative z-10 size-full object-cover" src={avatarUrl} fetchPriority="high" />
+					<img
+						alt={name}
+						className="relative z-10 size-full object-cover"
+						decoding="async"
+						fetchPriority="high"
+						height={avatarHeight}
+						src={avatarUrl}
+						width={avatarWidth}
+					/>
 				</div>
 			</div>
 		</section>

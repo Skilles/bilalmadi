@@ -10,7 +10,7 @@ export function Experience({ items }: ExperienceProps) {
 	return (
 		<section className={sectionShell} id="experience">
 			<div className={container}>
-				<SectionHeader number="01" title="Experience" />
+				<SectionHeader title="Experience" />
 
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 [&:has([data-experience-card]:not(:first-child):hover)_[data-experience-marker='primary']]:bg-line">
 					{items.map((item, index) => (
